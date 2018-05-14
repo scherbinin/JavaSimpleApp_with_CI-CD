@@ -5,16 +5,17 @@ services:
 before_script:
   - psql -c "CREATE DATABASE testing_db;" -U postgres
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
-  - echo "Before scripting phase: Test DB with user=foo and password=bar was succesfully created"
+  - echo "Before scripting phase"
+  - echo -e "\033[42mTest DB with user\=foo and password\=bar was succesfully created"
 
 script:
  - mvn clean package
 
 after_script:
- - echo "Script finished"
+ - echo -e "\033[42mScript finished"
 
 after_success:
- - echo "Build was successful. $TRAVIS_TEST_RESULT"
+ - echo -e "\033[42mBuild was successful. $TRAVIS_TEST_RESULT"
 
 after_failure:
  - echo "Build was failed"
