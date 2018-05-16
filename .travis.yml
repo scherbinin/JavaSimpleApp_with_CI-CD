@@ -5,8 +5,8 @@ services:
 before_script:
   - psql -c "CREATE DATABASE testing_db;" -U postgres
   - psql -c "CREATE USER foo WITH PASSWORD 'bar';" -U postgres
-  - psql -c "CREATE TABLE testing_db.public.test_table (id SERIAL PRIMARY KEY, comment VARCHAR);" -U postgres
-
+  - psql -l
+  - psql -d testing_db
   - echo "Before scripting phase"
   - echo -e "\033[42mTest DB with user\\=foo and password\\=bar was succesfully created"
 
