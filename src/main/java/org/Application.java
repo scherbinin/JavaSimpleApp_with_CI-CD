@@ -18,13 +18,8 @@ import org.springframework.context.annotation.ComponentScan;
 })
 public class Application {
     public static void main(String[] args) {
-
-
         testSpringBoot(args);
         testHibernate();
-
-
-
     }
 
     private static void testHibernate() {

@@ -4,7 +4,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
 public class HibernateUtils {
-    private static SessionFactory sessionFactory = null;
+    protected static SessionFactory sessionFactory = null;
 
     public static void ormInit() {
         if(sessionFactory != null && !sessionFactory.isClosed())
