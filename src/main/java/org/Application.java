@@ -12,12 +12,14 @@ import org.springframework.context.annotation.ComponentScan;
 @ComponentScan(basePackages = {
         "com.webTemplate.config.web",  // MVC @Configuration
         "com.webTemplate.config.security", // Security @Configuration
-        "com.webTemplate.config.jpa", // Database @Configuration -> does Entity Scan and Repository scan
+//        "com.webTemplate.config.jpa", // Database @Configuration -> does Entity Scan and Repository scan
         "com.webTemplate.service", // Service scan @Service
         "com.webTemplate.controler", // Controller scan @Controller
+        "org.springboot"
 })
 public class Application {
     public static void main(String[] args) {
+        ApplicationContext context = SpringApplication.run(Application.class, args);
         testSpringBoot(args);
         testHibernate();
     }
@@ -25,9 +27,10 @@ public class Application {
     private static void testHibernate() {
         //Init Hibernate
         HibernateUtils.ormInit();
-        TestServiceDAOImpl serviceDAO = new TestServiceDAOImpl();
-        TestEntity entity = serviceDAO.create("TEST");
+//        TestServiceDAOImpl serviceDAO = new TestServiceDAOImpl();
+//        TestEntity entity = serviceDAO.create("TEST");
 //        serviceDAO.deleteTestEntity(entity);
+        HibernateUtils.destroy();
     }
 
     private static void testSpringBoot(String[] args) {
