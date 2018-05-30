@@ -1,6 +1,7 @@
 language: java
 services:
   - postgresql
+  - docker
 
 before_script:
   - psql -f ./target/classes/scripts/init_test_env.sql -U postgres
@@ -12,6 +13,10 @@ script:
 
 after_script:
  - echo -e "\033[42mScript finished"
+
+befor install:
+ - docker build -t scherbinin/app .
+ - docker run -p 8090:8090 scherbinin/app
 
 after_success:
  - echo -e "\033[42mBuild was successful. $TRAVIS_TEST_RESULT"
