@@ -3,6 +3,9 @@ services:
   - postgresql
 
 before_script:
+  #
+
+
    - psql -f /target/sql/init_test_env.sql -U postgres
   #- psql -c "CREATE DATABASE testing_db;" -U postgres
   #- psql -d testing_db -c "CREATE TABLE testing_db.public.test_table (id SERIAL PRIMARY KEY, comment VARCHAR);" -U postgres
