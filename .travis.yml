@@ -19,9 +19,9 @@ befor install:
 # - docker run -p 8090:8090 scherbinin/app
 
 after_success:
+ - docker build -t scherbinin/app .
  - echo -e "\033[42mBuild was successful. $TRAVIS_TEST_RESULT"
 
 after_failure:
- - docker build -t scherbinin/app .
  - echo "Build was failed"
 
