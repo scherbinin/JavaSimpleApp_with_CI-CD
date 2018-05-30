@@ -10,6 +10,8 @@ before_script:
 #  - psql -d testing_db -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "test";" -U postgres
   - echo "Before scripting phase"
   - echo -e "\033[42mTest DB with user\\=foo and password\\=bar was succesfully created"
+  - pwd
+  - find -name "init_test_env.sql"
 
 script:
  - mvn clean package
