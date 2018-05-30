@@ -21,9 +21,13 @@ befor install:
 after_success:
  - echo -e "\033[42mBuild and tests successfully complete"
  - echo -e "\033[42mDocker stuff start"
- - docker login -e $DOCKER_EMAIL -u $DOCKER_USER -p $DOCKER_PASS
- - docker build -t scherbinin/java_spring_hibernate .
- - docker push scherbinin/java_spring_hibernate
+
+ - docker login -u $DOCKER_USER -p $DOCKER_PASS
+ - docker build -t java_spring_hibernate .
+
+ - docker tag java_spring_hibernate scherbininiliy/common
+ - docker push scherbininiliy/common
+
  - echo -e "\033[42mContainer deploy was successfully done"
 
 after_failure:
