@@ -1,8 +1,6 @@
 package org;
 
 import org.ormlayer.HibernateUtils;
-import org.ormlayer.TestServiceDAOImpl;
-import org.ormlayer.dto.TestEntity;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -19,7 +17,6 @@ import org.springframework.context.annotation.ComponentScan;
 })
 public class Application {
     public static void main(String[] args) {
-        ApplicationContext context = SpringApplication.run(Application.class, args);
         testSpringBoot(args);
         testHibernate();
     }
