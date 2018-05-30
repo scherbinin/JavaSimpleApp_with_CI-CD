@@ -3,7 +3,7 @@ services:
   - postgresql
 
 before_script:
-   - psql -f src\main\resources\scripts\init_test_env.sql -U postgres
+   - psql -f \src\main\resources\scripts\init_test_env.sql -U postgres
 
 
    #####
