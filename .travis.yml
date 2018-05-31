@@ -25,8 +25,8 @@ after_success:
  - docker login -u $DOCKER_USER -p $DOCKER_PASS
  - docker build -t java_spring_hibernate .
 
- - docker tag java_spring_hibernate scherbininiliy/docker pull scherbininiliy/test_app
- - docker push scherbininiliy/docker pull scherbininiliy/test_app
+ - docker tag java_spring_hibernate scherbininiliy/test_app
+ - docker push scherbininiliy/test_app
 
  - echo -e "\033[42mContainer deploy was successfully done"
 
