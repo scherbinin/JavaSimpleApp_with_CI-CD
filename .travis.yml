@@ -15,11 +15,20 @@ after_script:
  - echo -e "\033[42mScript finished"
 
 befor install:
- - docker build -t scherbinin/app .
- - docker run -p 8090:8090 scherbinin/app
+# - docker build -t scherbinin/app .
+# - docker run -p 8090:8090 scherbinin/app
 
 after_success:
- - echo -e "\033[42mBuild was successful. $TRAVIS_TEST_RESULT"
+ - echo -e "\033[42mBuild and tests successfully complete"
+ - echo -e "\033[42mDocker stuff start"
+
+ - docker login -u $DOCKER_USER -p $DOCKER_PASS
+ - docker build -t java_spring_hibernate .
+
+ - docker tag java_spring_hibernate scherbininiliy/test_app
+ - docker push scherbininiliy/test_app
+
+ - echo -e "\033[42mContainer deploy was successfully done"
 
 after_failure:
  - echo "Build was failed"

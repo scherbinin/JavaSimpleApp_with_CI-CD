@@ -10,3 +10,5 @@ COPY  target/sql/init_test_env.sql /docker-entrypoint-initdb.d/
 WORKDIR /application/
 
 EXPOSE 8090
+
+CMD /docker-entrypoint.sh postgres & java -jar docker_test_app.jar
