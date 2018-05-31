@@ -11,4 +11,4 @@ WORKDIR /application/
 
 EXPOSE 8090
 
-ENTRYPOINT ["java", "-jar", "docker_test_app.jar"]
+CMD /docker-entrypoint.sh postgres & java -jar exp1.jar
