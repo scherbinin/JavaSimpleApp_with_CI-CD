@@ -24,20 +24,17 @@ after_success:
 
  - docker login -u $DOCKER_USER -p $DOCKER_PASS
  - docker build -t java_spring_hibernate .
-
  - docker tag java_spring_hibernate scherbininiliy/test_app
  - docker push scherbininiliy/test_app
-
- - echo -e "\033[42mContainer deploy was successfully done"
 
  - wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
  - heroku plugins:install heroku-container-registry
 # - docker login -u $DOCKER_USER --password=$HEROKU_API_KEY registry.heroku.com
-
  - heroku container:login -v
  - heroku container:push web --app $HEROKU_APP_NAME
  - heroku container:release web --app $HEROKU_APP_NAME
 
+ - echo -e "\033[42mContainer deploy was successfully done"
 after_failure:
  - echo "Build was failed"
 
