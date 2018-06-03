@@ -33,7 +33,9 @@ after_success:
  - heroku container:push web --app $HEROKU_APP_NAME
  - heroku container:release web --app $HEROKU_APP_NAME
 
+
  - echo -e "\033[42mContainer deploy was successfully done"
+ 
 after_failure:
  - echo "Build was failed"
 
