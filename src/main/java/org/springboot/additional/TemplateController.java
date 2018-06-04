@@ -14,6 +14,6 @@ public class TemplateController {
     @RequestMapping("/kiss")
     public String kiss() {return "kiss";}
 
-    @RequestMapping("/denis")
-    public String denis() {return "denis";}
+    @RequestMapping("/dime")
+    public String denis() {return "dime";}
 }
