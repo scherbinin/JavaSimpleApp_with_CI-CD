@@ -15,4 +15,7 @@ public class MainController {
     public String showStartMessage() {
         return "Hello world !";
     }
+
+    @RequestMapping("/zanuda")
+    public  String zanuda() { return "Dima - zanuda !";}
 }
