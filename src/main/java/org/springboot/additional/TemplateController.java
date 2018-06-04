@@ -10,4 +10,7 @@ public class TemplateController {
     public String showView() {
         return "hello-world";
     }
+
+    @RequestMapping("/kiss")
+    public String kiss() {return "kiss";}
 }
