@@ -12,8 +12,7 @@ public class TemplateController {
     }
 
     @RequestMapping("/kiss")
-    public String kiss() {return "kiss";}
-
-    @RequestMapping("/dime")
-    public String denis() {return "dime";}
+    public String kiss() {
+        return "kiss";
+    }
 }
